@@ -1,0 +1,134 @@
+/* ---------------------------------------------------------------------------- MAPA -- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+#map {
+  height: 100%; }
+
+* {
+  /*outline: 1px solid rgba(255, 0, 0, 0.41);*/ }
+
+/* ------------------------------------------------------------------------ MENU NAV -- */
+#nav-sec {
+  background: #fff;
+  border: none; }
+  #nav-sec img {
+    width: 200px;
+    padding: 8px 0; }
+  #nav-sec a {
+    font-size: 30px;
+    float: right;
+    color: #ffc56e;
+    top: 12px; }
+    #nav-sec a:hover {
+      text-decoration: none; }
+  #nav-sec .tooltip-inner {
+    position: absolute;
+    top: 15px;
+    width: 200px;
+    right: -15px;
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 15px;
+    font-size: 15px; }
+
+/* --------------------------------------------------------------------- SELECCIONAR -- */
+#home-sec .seleccionar {
+  position: absolute;
+  width: 35%;
+  top: 85px;
+  background: #fff;
+  padding: 0px 20px 20px 20px; }
+  #home-sec .seleccionar label {
+    padding-top: 15px; }
+#home-sec .buscar {
+  position: absolute;
+  width: 35%;
+  background: #ffc56e;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px;
+  font-size: 16px;
+  top: 258px; }
+  #home-sec .buscar:focus {
+    border-color: #ffc56e;
+    outline: 2px outset #ffc56e !important; }
+#home-sec select {
+  border-color: #ffc56e;
+  width: 100%;
+  padding: 6px; }
+  #home-sec select:focus {
+    border-color: #ffc56e;
+    outline: 2px outset #ffc56e !important; }
+
+.btn-group, .bootstrap-select, .show-tick {
+  width: 100% !important; }
+
+/* ---------------------------------------------------------------------------- INFO -- */
+.tipo-letra {
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: 0.5em;
+  font-weight: 100; }
+
+#info .row {
+  padding: 5px 20px; }
+  #info .row small {
+    display: block; }
+  #info .row .sel-let {
+    line-height: 12px;
+    padding-bottom: 15px; }
+  #info .row img {
+    width: 60%;
+    display: inline-block; }
+  #info .row h4 {
+    font-weight: bolder;
+    margin: 0; }
+  #info .row #pasajeros {
+    width: 100%;
+    border: 2px solid #ffc56e;
+    padding-left: 5px; }
+    #info .row #pasajeros:focus {
+      border-color: #ffc56e;
+      outline: 2px outset #ffc56e !important; }
+  #info .row p {
+    display: inline-block; }
+#info .select-carro {
+  position: absolute;
+  width: 35%;
+  top: 309px;
+  background: #fff;
+  padding: 20px;
+  padding-bottom: 10px; }
+#info .compartir {
+  position: absolute;
+  width: 35%;
+  background: #ffc56e;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px;
+  font-size: 16px;
+  top: 633px; }
+  #info .compartir:focus {
+    border-color: #ffc56e;
+    outline: 2px outset #ffc56e !important; }
+
+/* ---------------------------------------------------------------------- CALCULATOR -- */
+.sweet-alert, .sa-icon {
+  width: 300px !important; }
+
+.showSweetAlert {
+  width: 500px !important; }
+
+/* -------------------------------------------------------------------------- FOOTER -- */
+/* -------------------------------------------------------------------------- FOOTER -- */
+#footer {
+  position: absolute;
+  bottom: 0; }
+
+/*# sourceMappingURL=style.css.map */

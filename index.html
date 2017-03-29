@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Examen Herramientas Productividad</title>
+	<!--REQUIRED STYLE SHEETS-->
+	<link rel="stylesheet" href="src/css/sweetalert.css">
+	<link rel="stylesheet" href="src/css/bootstrap.css">
+	<link rel="stylesheet" href="src/css/bootstrap-select.min.css">
+	<link rel="stylesheet" href="src/css/style.css">
+</head>
+<body onload="init()">
+<!-- ------------------------------------------------------------------ MAPA -->
+    <div id="map"></div>
+<!-- ------------------------------------------------------------------ MENU -->
+	<div class="navbar navbar-inverse navbar-fixed-top" id="nav-sec">
+		<div class="container">
+		    <img src="src/img/logo-gris.jpg" alt="">
+		    <a data-toggle="tooltip" data-placement="bottom" class="glyphicon glyphicon-info-sign test"></a>
+		</div>
+	</div><!--END NAV SECTION -->
+	<div id="home-sec">   
+		<div class="container"  >
+            <div class="seleccionar">
+                <label for="origen" class="tipo-letra">ORIGEN</label>
+                <select name="origen" id="origen" onchange="calcRoute()" class="selectpicker show-tick">
+                    <option value="">Seleccione</option>
+                    <option value="arica">Arica</option>
+                    <option value="Iquique, Chile">Iquique</option>
+                    <option value="Antofagasta, Chile">Antofagasta</option>
+                    <option value="Copiapó, Chile">Copiapó</option>
+                    <option value="La Serena, Chile">La Serena</option>
+                    <option value="Valparaíso, Chile">Valparaíso</option>
+                    <option value="Rancagua, Chile">Rancagua</option>
+                    <option value="Talca, Chile">Talca</option>
+                    <option value="Concepción, Chile">Concepción</option>
+                    <option value="Temuco, Chile">Temuco</option>
+                    <option value="Valdivia, Chile">Valdivia</option>
+                    <option value="Puerto Montt, Chile">Puerto Montt</option>
+                    <option value="Coyhaique, Chile">Coyhaique</option>
+                    <option value="Punta Arenas, Providencia, Chile">Punta Arenas</option><option value="Santiago, Chile">Santiago</option>
+                    
+                </select>
+
+                <label for="destino" class="tipo-letra">DESTINO</label>
+                <select name="destino" id="destino" onchange="calcRoute();" class="selectpicker show-tick">
+                    <option value="">Seleccione</option>
+                    <option value="arica">Arica</option>
+                    <option value="Iquique, Chile">Iquique</option>
+                    <option value="Antofagasta, Chile">Antofagasta</option>
+                    <option value="Copiapó, Chile">Copiapó</option>
+                    <option value="La Serena, Chile">La Serena</option>
+                    <option value="Valparaíso, Chile">Valparaíso</option>
+                    <option value="Rancagua, Chile">Rancagua</option>
+                    <option value="Talca, Chile">Talca</option>
+                    <option value="Concepción, Chile">Concepción</option>
+                    <option value="Temuco, Chile">Temuco</option>
+                    <option value="Valdivia, Chile">Valdivia</option>
+                    <option value="Puerto Montt, Chile">Puerto Montt</option>
+                    <option value="Coyhaique, Chile">Coyhaique</option>
+                    <option value="Punta Arenas, Providencia, Chile">Punta Arenas</option>
+                    <option value="Santiago, Chile">Santiago</option>
+                </select>
+            </div>
+            <div btn-buscar>
+                <button class="buscar">buscar</button>
+            </div>
+            
+		</div>
+	</div><!--END HOME SECTION--> 
+<!-- ---------------------------------------------------------------------------- INFO -- -->
+	<section id="info" style="display:none;">
+		<div class="container">
+            <div class="select-carro">
+                <div class="row">
+		            <h3 class="tipo-letra">VEHÍCULO</h3>
+		            <small class="tipo-letra sel-let">seleccione</small>
+		            <div class="col-md-3">
+		                <input type="radio" name="vehicle" value="moto" class="vehiculo moto">
+		                <img src="src/img/moto.jpg" alt="" class="img-responsive">
+		            </div>
+		            <div class="col-md-6">
+		                <h4>Motocicleta</h4>
+		                <small>máximo 2 pasajeros</small>
+		            </div>
+		            <div class="col-md-3">
+		                $<p class="money-moto">3680</p>
+		            </div>
+		        </div>
+                <div class="row">
+		            <div class="col-md-3">
+		                <input type="radio" name="vehicle" value="auto" class="vehiculo auto">
+		                <img src="src/img/auto.jpg" alt="" class="img-responsive">
+		            </div>
+		            <div class="col-md-6">
+		                <h4>Automóvil</h4>
+		                <small>máximo 5 pasajeros</small>
+		            </div>
+		            <div class="col-md-3">
+                        $<p class="money-auto"></p>
+		            </div>
+		        </div>
+                <div class="row">
+		            <div class="col-md-3">
+		                <input type="radio" name="vehicle" value="minivan" class="vehiculo minivan">
+		                <img src="src/img/van.jpg" alt="" class="img-responsive">
+		            </div>
+		            <div class="col-md-6">
+		                <h4>Minivan</h4>
+		                <small>máximo 8 pasajeros</small>
+		            </div>
+		            <div class="col-md-3">
+		                $<p class="money-minivan">9400</p>
+		            </div>
+		        </div>
+                <div class="row">
+		            <div class="col-md-3">
+		                <input type="radio" name="vehicle" value="camion" class="vehiculo camion">
+		                <img src="src/img/camion.jpg" alt="" class="img-responsive">
+		            </div>
+		            <div class="col-md-6">
+		                <h4>Camión</h4>
+		                <small>máximo 3 pasajeros</small>
+		            </div>
+		            <div class="col-md-3">
+		                $<p class="money-camion">15040</p>
+		            </div>
+		        </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h4>Cantidad pasajeros:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="pasajeros" onKeyPress="return SoloNumeros(event);">
+                    </div>
+                </div>
+                
+            </div>
+		    <div btn-compartir>
+                <button class="compartir">compartir carro!</button>
+            </div>
+		</div>
+	</section><!--END ABOUT SECTION-->
+	<section id="calculator" >
+		<div class="container">
+		</div>
+	</section><!--END PROJECT SECTION-->
+	<div id="footer">
+		2014 www.yourdomain.com | All Right Reserved  
+	</div><!-- END FOOTER SECTION -->
+	
+	<script src="src/js/jquery.min.js"></script>
+	<script src="src/js/main.js"></script>
+	<script src="src/js/common.js"></script>
+	<script src="src/js/mapa.js"></script>
+	<script src="src/js/sweetalert.min.js"></script>
+	<script src="src/js/bootstrap.js"></script>
+	<script src="src/js/bootstrap-select.min.js"></script>
+	<script src="src/js/auto.js"></script>
+	<script src="src/js/camion.js"></script>
+	<script src="src/js/camioneta.js"></script>
+	<script src="src/js/ciudades.js"></script>
+	<script src="src/js/custom.js"></script>
+	<script src="src/js/moto.js"></script>
+	<script src="src/js/scroll.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1OTUCWFO21snB64uTCKgsDmi3UlP5FCo&callback=initMap" async defer></script>
+</body>
+</html>
